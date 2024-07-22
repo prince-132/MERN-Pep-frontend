@@ -71,6 +71,15 @@ const Dashboard = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await axios.get('https://mern-pep-backend.onrender.com/auth/logout');
+      navigate('/login');
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:px-6 sm:py-16 lg:px-8 lg:py-16 relative">
       {/* Navbar */}
